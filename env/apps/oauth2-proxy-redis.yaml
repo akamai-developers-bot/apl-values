@@ -1,0 +1,22 @@
+kind: AplApp
+metadata:
+    name: oauth2-proxy-redis
+spec:
+    _rawValues: {}
+    persistentVolumeSize: 1Gi
+    replicas: 1
+    resources:
+        master:
+            limits:
+                cpu: 200m
+                memory: 128Mi
+            requests:
+                cpu: 20m
+                memory: 16Mi
+        sentinel:
+            limits:
+                cpu: 500m
+                memory: 256Mi
+            requests:
+                cpu: 200m
+                memory: 64Mi

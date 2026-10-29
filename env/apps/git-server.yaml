@@ -1,0 +1,14 @@
+kind: AplApp
+metadata:
+    name: git-server
+spec:
+    _rawValues: {}
+    createHttpRoute: true
+    enabled: true
+    resources:
+        limits:
+            cpu: 200m
+            memory: 128Mi
+        requests:
+            cpu: 50m
+            memory: 64Mi

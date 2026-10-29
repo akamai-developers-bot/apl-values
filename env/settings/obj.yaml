@@ -1,0 +1,6 @@
+kind: AplObjectStorage
+metadata:
+    name: obj
+spec:
+    provider:
+        type: disabled

@@ -1,0 +1,14 @@
+kind: AplApp
+metadata:
+    name: alertmanager
+spec:
+    _rawValues: {}
+    enabled: false
+    resources:
+        alertmanager:
+            limits:
+                cpu: 200m
+                memory: 256Mi
+            requests:
+                cpu: 10m
+                memory: 64Mi

@@ -1,0 +1,13 @@
+kind: AplApp
+metadata:
+    name: apl-operator
+spec:
+    _rawValues: {}
+    resources:
+        operator:
+            limits:
+                cpu: "1"
+                memory: 1Gi
+            requests:
+                cpu: 250m
+                memory: 128Mi

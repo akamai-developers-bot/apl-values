@@ -1,0 +1,118 @@
+kind: AplApp
+metadata:
+    name: loki
+spec:
+    _rawValues: {}
+    autoscaling:
+        distributor:
+            enabled: false
+            maxReplicas: 3
+            minReplicas: 1
+            targetCPUUtilizationPercentage: 80
+            targetMemoryUtilizationPercentage: 80
+        gateway:
+            enabled: false
+            maxReplicas: 3
+            minReplicas: 1
+            targetCPUUtilizationPercentage: 80
+            targetMemoryUtilizationPercentage: 80
+        ingester:
+            enabled: false
+            maxReplicas: 3
+            minReplicas: 1
+            targetCPUUtilizationPercentage: 80
+            targetMemoryUtilizationPercentage: 80
+        querier:
+            enabled: false
+            maxReplicas: 3
+            minReplicas: 1
+            targetCPUUtilizationPercentage: 80
+            targetMemoryUtilizationPercentage: 80
+        queryFrontend:
+            enabled: false
+            maxReplicas: 3
+            minReplicas: 1
+            targetCPUUtilizationPercentage: 80
+            targetMemoryUtilizationPercentage: 80
+        queryScheduler:
+            enabled: false
+            maxReplicas: 3
+            minReplicas: 1
+            targetCPUUtilizationPercentage: 80
+            targetMemoryUtilizationPercentage: 80
+    enabled: false
+    networkPolicies:
+        enabled: true
+    persistentVolumeSize: 10G
+    resources:
+        compactor:
+            limits:
+                cpu: 200m
+                memory: 256Mi
+            requests:
+                cpu: 50m
+                memory: 128Mi
+        distributor:
+            limits:
+                cpu: 500m
+                memory: 512Mi
+            requests:
+                cpu: 150m
+                memory: 128Mi
+        gateway:
+            limits:
+                cpu: 200m
+                memory: 256Mi
+            requests:
+                cpu: 50m
+                memory: 64Mi
+        indexGateway:
+            limits:
+                cpu: 200m
+                memory: 256Mi
+            requests:
+                cpu: 50m
+                memory: 64Mi
+        ingester:
+            limits:
+                cpu: 500m
+                memory: 1Gi
+            requests:
+                cpu: 250m
+                memory: 512Mi
+        querier:
+            limits:
+                cpu: 200m
+                memory: 256Mi
+            requests:
+                cpu: 50m
+                memory: 144Mi
+        queryFrontend:
+            limits:
+                cpu: 200m
+                memory: 256Mi
+            requests:
+                cpu: 50m
+                memory: 64Mi
+        queryScheduler:
+            limits:
+                cpu: 200m
+                memory: 256Mi
+            requests:
+                cpu: 50m
+                memory: 64Mi
+        reverseProxy:
+            limits:
+                cpu: 100m
+                memory: 32Mi
+            requests:
+                cpu: 50m
+                memory: 16Mi
+        singleBinary:
+            limits:
+                cpu: 500m
+                memory: 2Gi
+            requests:
+                cpu: 100m
+                memory: 512Mi
+    v13SchemaStartDate: ""
