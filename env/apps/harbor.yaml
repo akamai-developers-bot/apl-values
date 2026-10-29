@@ -5,7 +5,7 @@ spec:
     _rawValues: {}
     databaseMaxConnections: 28
     databaseMaxIdleConnections: 6
-    enabled: false
+    enabled: true
     oidcAutoOnboard: true
     oidcUserClaim: email
     registry:

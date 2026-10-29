@@ -3,7 +3,7 @@ metadata:
     name: trivy
 spec:
     _rawValues: {}
-    enabled: false
+    enabled: true
     operator:
         replicaCount: 1
     resources:

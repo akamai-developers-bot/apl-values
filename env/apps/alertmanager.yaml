@@ -3,7 +3,7 @@ metadata:
     name: alertmanager
 spec:
     _rawValues: {}
-    enabled: false
+    enabled: true
     resources:
         alertmanager:
             limits:
