@@ -3,10 +3,6 @@ metadata:
     name: otomi
 spec:
     aiEnabled: false
-    git:
-        branch: kubecon-1
-        email: devrel@akamai.com
-        repoUrl: https://github.com/akamai-developers-bot/apl-values.git
     hasExternalDNS: false
     hasExternalIDP: false
     isMultitenant: true
