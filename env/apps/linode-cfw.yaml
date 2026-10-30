@@ -1,0 +1,6 @@
+kind: AplApp
+metadata:
+    name: linode-cfw
+spec:
+    _rawValues: {}
+    enabled: false

@@ -1,0 +1,21 @@
+kind: AplApp
+metadata:
+    name: grafana
+spec:
+    _rawValues: {}
+    enabled: false
+    resources:
+        grafana:
+            limits:
+                cpu: "1"
+                memory: 1Gi
+            requests:
+                cpu: 10m
+                memory: 128Mi
+        sidecar:
+            limits:
+                cpu: 500m
+                memory: 256Mi
+            requests:
+                cpu: 10m
+                memory: 128Mi

@@ -1,0 +1,30 @@
+kind: AplDatabase
+metadata:
+    name: harbor
+spec:
+    backupSidecarResources:
+        limits:
+            cpu: 300m
+            memory: 256Mi
+        requests:
+            cpu: 50m
+            memory: 48Mi
+    coreDatabase: registry
+    externalClusters: []
+    imageName: null
+    postgresqlParameters:
+        max_connections: "32"
+        shared_buffers: 64MB
+        work_mem: 2MB
+    recovery: {}
+    replicas: 2
+    resources:
+        limits:
+            cpu: 200m
+            memory: 192Mi
+        requests:
+            cpu: 200m
+            memory: 192Mi
+    size: 5Gi
+    storageClass: linode-block-storage
+    walStorageSize: 5Gi

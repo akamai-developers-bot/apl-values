@@ -1,0 +1,20 @@
+kind: AplApp
+metadata:
+    name: cnpg
+spec:
+    _rawValues: {}
+    barmanPluginResources:
+        limits:
+            cpu: 100m
+            memory: 200Mi
+        requests:
+            cpu: 100m
+            memory: 100Mi
+    resources:
+        limits:
+            cpu: "1"
+            memory: 1Gi
+        requests:
+            cpu: 50m
+            memory: 144Mi
+    useBackupPlugin: true
