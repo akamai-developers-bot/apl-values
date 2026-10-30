@@ -1,0 +1,9 @@
+kind: AplTeamCodeRepo
+metadata:
+    name: loadgenerator
+    labels:
+        apl.io/teamId: loadgen
+spec:
+    gitService: github
+    private: false
+    repositoryUrl: https://github.com/Ani1357/loadgenerator.git

@@ -1,0 +1,18 @@
+kind: AplTeamBuild
+metadata:
+    name: recommendationservice-main
+    labels:
+        apl.io/teamId: recommend
+spec:
+    externalRepo: true
+    imageName: recommendationservice
+    mode:
+        docker:
+            envVars: []
+            path: Dockerfile
+            repoUrl: https://github.com/Ani1357/recommendationservice.git
+            revision: main
+        type: docker
+    scanSource: false
+    tag: main
+    trigger: false

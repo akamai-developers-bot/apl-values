@@ -1,0 +1,9 @@
+kind: AplTeamCodeRepo
+metadata:
+    name: shippingservice
+    labels:
+        apl.io/teamId: shipping
+spec:
+    gitService: github
+    private: false
+    repositoryUrl: https://github.com/Ani1357/shippingservice.git

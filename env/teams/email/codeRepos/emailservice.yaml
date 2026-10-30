@@ -1,0 +1,9 @@
+kind: AplTeamCodeRepo
+metadata:
+    name: emailservice
+    labels:
+        apl.io/teamId: email
+spec:
+    gitService: github
+    private: false
+    repositoryUrl: https://github.com/Ani1357/emailservice.git

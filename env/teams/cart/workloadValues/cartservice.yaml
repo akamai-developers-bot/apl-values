@@ -1,0 +1,56 @@
+fullnameOverride: cartservice
+
+image:
+  repository: harbor.d2.dev-akamai-apl.net/team-cart/cartservice
+  pullPolicy: IfNotPresent
+  tag: "main"
+
+replicaCount: 1
+
+containerPorts:
+  - name: grpc
+    containerPort: 7070
+    protocol: TCP
+
+servicePorts:
+  - port: 7070
+    targetPort: grpc
+    protocol: TCP
+    name: grpc
+
+env:
+  - name: REDIS_ADDR
+    value: "redis-cart:6379"
+
+livenessProbe:
+  initialDelaySeconds: 15
+  periodSeconds: 10
+  grpc:
+    port: 7070
+
+readinessProbe:
+  initialDelaySeconds: 15
+  grpc:
+    port: 7070
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 128Mi
+  limits:
+    cpu: 300m
+    memory: 256Mi
+
+podSecurityContext:
+  fsGroup: 1000
+  runAsGroup: 1000
+  runAsNonRoot: true
+  runAsUser: 1000
+
+containerSecurityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  privileged: false
+  readOnlyRootFilesystem: true

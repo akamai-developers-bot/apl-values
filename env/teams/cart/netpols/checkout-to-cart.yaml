@@ -1,0 +1,16 @@
+kind: AplTeamNetworkControl
+metadata:
+    name: checkout-to-cart
+    labels:
+        apl.io/teamId: cart
+spec:
+    ruleType:
+        ingress:
+            allow:
+                - fromLabelName: app.kubernetes.io/instance
+                  fromLabelValue: checkoutservice
+                  fromNamespace: team-checkout
+            mode: AllowOnly
+            toLabelName: app.kubernetes.io/instance
+            toLabelValue: cartservice
+        type: ingress

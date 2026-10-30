@@ -1,0 +1,16 @@
+kind: AplTeamNetworkControl
+metadata:
+    name: cart-to-redis
+    labels:
+        apl.io/teamId: cart
+spec:
+    ruleType:
+        ingress:
+            allow:
+                - fromLabelName: app.kubernetes.io/instance
+                  fromLabelValue: cartservice
+                  fromNamespace: team-cart
+            mode: AllowOnly
+            toLabelName: app
+            toLabelValue: redis-ha
+        type: ingress

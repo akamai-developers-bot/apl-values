@@ -1,0 +1,9 @@
+kind: AplTeamCodeRepo
+metadata:
+    name: frontend
+    labels:
+        apl.io/teamId: frontend
+spec:
+    gitService: github
+    private: false
+    repositoryUrl: https://github.com/Ani1357/frontend.git

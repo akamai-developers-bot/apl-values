@@ -1,0 +1,9 @@
+kind: AplTeamCodeRepo
+metadata:
+    name: recommendationservice
+    labels:
+        apl.io/teamId: recommend
+spec:
+    gitService: github
+    private: false
+    repositoryUrl: https://github.com/Ani1357/recommendationservice.git
