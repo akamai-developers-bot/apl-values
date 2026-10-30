@@ -1,0 +1,16 @@
+kind: AplTeamNetworkControl
+metadata:
+    name: checkout-to-currency
+    labels:
+        apl.io/teamId: currency
+spec:
+    ruleType:
+        ingress:
+            allow:
+                - fromLabelName: app.kubernetes.io/instance
+                  fromLabelValue: checkoutservice
+                  fromNamespace: team-checkout
+            mode: AllowOnly
+            toLabelName: app.kubernetes.io/instance
+            toLabelValue: currencyservice
+        type: ingress

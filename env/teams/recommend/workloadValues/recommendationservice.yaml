@@ -1,0 +1,63 @@
+fullnameOverride: recommendationservice
+
+image:
+  repository: harbor.d2.dev-akamai-apl.net/team-recommendation/recommendationservice
+  pullPolicy: IfNotPresent
+  tag: "main"
+
+replicaCount: 1
+
+containerPorts:
+  - name: grpc
+    containerPort: 8080
+    protocol: TCP
+
+servicePorts:
+  - port: 8080
+    targetPort: grpc
+    protocol: TCP
+    name: grpc
+
+env:
+  - name: PORT
+    value: "8080"
+  - name: PRODUCT_CATALOG_SERVICE_ADDR
+    value: "productcatalogservice.team-productcatalog:3550"
+  - name: DISABLE_PROFILER
+    value: "1"
+  - name: COLLECTOR_SERVICE_ADDR
+    value: "opentelemetrycollector.otel:4317"
+  - name: OTEL_SERVICE_NAME
+    value: "recommendationservice"
+
+livenessProbe:
+  periodSeconds: 5
+  grpc:
+    port: 8080
+
+readinessProbe:
+  periodSeconds: 5
+  grpc:
+    port: 8080
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 220Mi
+  limits:
+    cpu: 200m
+    memory: 450Mi
+
+podSecurityContext:
+  fsGroup: 1000
+  runAsGroup: 1000
+  runAsNonRoot: true
+  runAsUser: 1000
+
+containerSecurityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  privileged: false
+  readOnlyRootFilesystem: true

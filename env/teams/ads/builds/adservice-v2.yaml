@@ -1,0 +1,19 @@
+kind: AplTeamBuild
+metadata:
+    labels:
+        apl.io/teamId: ads
+    name: adservice-v2
+spec:
+    externalRepo: true
+    imageName: adservice
+    mode:
+        docker:
+            envVars: []
+            path: ./Dockerfile
+            repoUrl: https://github.com/Ani1357/adservice.git
+            revision: main
+        type: docker
+    scanSource: false
+    tag: v2
+    trigger: false
+status: {}

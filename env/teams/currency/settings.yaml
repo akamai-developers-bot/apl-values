@@ -1,0 +1,38 @@
+kind: AplTeamSettingSet
+metadata:
+    name: currency
+    labels:
+        apl.io/teamId: currency
+spec:
+    alerts:
+        groupInterval: 5m
+        msteams: {}
+        receivers: []
+        repeatInterval: 3h
+        slack:
+            channel: ""
+            channelCrit: ""
+    managedMonitoring:
+        alertmanager: false
+        grafana: false
+    networkPolicy:
+        egressPublic: true
+        ingressPrivate: true
+    resourceQuota:
+        - name: services.loadbalancers
+          value: "0"
+        - name: services.nodeports
+          value: "0"
+        - name: requests.cpu
+          value: "4"
+        - name: requests.memory
+          value: 4Gi
+        - name: pods
+          value: "10"
+    selfService:
+        teamMembers:
+            createServices: true
+            downloadDockerLogin: true
+            downloadKubeconfig: true
+            editSecurityPolicies: true
+            useCloudShell: true

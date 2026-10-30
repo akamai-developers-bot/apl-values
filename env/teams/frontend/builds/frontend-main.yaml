@@ -1,0 +1,18 @@
+kind: AplTeamBuild
+metadata:
+    name: frontend-main
+    labels:
+        apl.io/teamId: frontend
+spec:
+    externalRepo: true
+    imageName: frontend
+    mode:
+        docker:
+            envVars: []
+            path: Dockerfile
+            repoUrl: https://github.com/Ani1357/frontend.git
+            revision: main
+        type: docker
+    scanSource: false
+    tag: main
+    trigger: false

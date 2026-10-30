@@ -1,0 +1,9 @@
+kind: AplTeamCodeRepo
+metadata:
+    name: currencyservice
+    labels:
+        apl.io/teamId: currency
+spec:
+    gitService: github
+    private: false
+    repositoryUrl: https://github.com/Ani1357/currencyservice.git

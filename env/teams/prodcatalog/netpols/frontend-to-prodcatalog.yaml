@@ -1,0 +1,16 @@
+kind: AplTeamNetworkControl
+metadata:
+    name: frontend-to-productcatalog
+    labels:
+        apl.io/teamId: prodcatalog
+spec:
+    ruleType:
+        ingress:
+            allow:
+                - fromLabelName: app.kubernetes.io/instance
+                  fromLabelValue: frontend
+                  fromNamespace: team-frontend
+            mode: AllowOnly
+            toLabelName: app.kubernetes.io/instance
+            toLabelValue: productcatalogservice
+        type: ingress
