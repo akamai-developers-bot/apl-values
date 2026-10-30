@@ -1,0 +1,27 @@
+kind: AplTeamService
+metadata:
+    name: frontend
+    labels:
+        apl.io/teamId: frontend
+spec:
+    cname:
+        domain: ""
+    domain: frontend-frontend.d2.dev-akamai-apl.net
+    forwardPath: false
+    hasCert: false
+    headers:
+        response:
+            set: []
+    ingressClassName: platform
+    ksvc:
+        predeployed: false
+    namespace: team-frontend
+    ownHost: true
+    paths: []
+    port: 80
+    tlsPass: false
+    trafficControl:
+        enabled: false
+        weightV1: 50
+        weightV2: 50
+    useCname: false

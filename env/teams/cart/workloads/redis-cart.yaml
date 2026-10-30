@@ -1,0 +1,17 @@
+kind: AplTeamWorkload
+metadata:
+    name: redis-cart
+    labels:
+        apl.io/teamId: cart
+spec:
+    chartMetadata:
+        helmChartDescription: ""
+        helmChartVersion: ""
+    chartProvider: git
+    createNamespace: false
+    imageUpdateStrategy:
+        type: disabled
+    path: redis-ha
+    revision: main
+    sidecarInject: false
+    url: https://github.com/linode/apl-charts.git

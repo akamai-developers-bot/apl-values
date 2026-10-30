@@ -1,0 +1,16 @@
+kind: AplTeamNetworkControl
+metadata:
+    name: checkout-to-productcatalog
+    labels:
+        apl.io/teamId: prodcatalog
+spec:
+    ruleType:
+        ingress:
+            allow:
+                - fromLabelName: app.kubernetes.io/instance
+                  fromLabelValue: checkoutservice
+                  fromNamespace: team-checkout
+            mode: AllowOnly
+            toLabelName: app.kubernetes.io/instance
+            toLabelValue: productcatalogservice
+        type: ingress

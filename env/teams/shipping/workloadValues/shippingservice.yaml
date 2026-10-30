@@ -1,0 +1,47 @@
+fullnameOverride: shippingservice
+
+image:
+  repository: harbor.d2.dev-akamai-apl.net/team-shipping/shippingservice
+  pullPolicy: IfNotPresent
+  tag: "main"
+
+replicaCount: 1
+
+containerPorts:
+  - name: grpc
+    containerPort: 50051
+    protocol: TCP
+
+servicePorts:
+  - port: 50051
+    targetPort: grpc
+    protocol: TCP
+    name: grpc
+
+env:
+  - name: PORT
+    value: "50051"
+  - name: DISABLE_PROFILER
+    value: "1"
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 64Mi
+  limits:
+    cpu: 200m
+    memory: 128Mi
+
+podSecurityContext:
+  fsGroup: 1000
+  runAsGroup: 1000
+  runAsNonRoot: true
+  runAsUser: 1000
+
+containerSecurityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  privileged: false
+  readOnlyRootFilesystem: true

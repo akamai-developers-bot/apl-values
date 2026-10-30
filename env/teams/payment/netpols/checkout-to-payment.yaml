@@ -1,0 +1,16 @@
+kind: AplTeamNetworkControl
+metadata:
+    name: checkout-to-payment
+    labels:
+        apl.io/teamId: payment
+spec:
+    ruleType:
+        ingress:
+            allow:
+                - fromLabelName: app.kubernetes.io/instance
+                  fromLabelValue: checkoutservice
+                  fromNamespace: team-checkout
+            mode: AllowOnly
+            toLabelName: app.kubernetes.io/instance
+            toLabelValue: paymentservice
+        type: ingress

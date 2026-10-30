@@ -1,0 +1,18 @@
+kind: AplTeamBuild
+metadata:
+    name: shippingservice-main
+    labels:
+        apl.io/teamId: shipping
+spec:
+    externalRepo: true
+    imageName: shippingservice
+    mode:
+        docker:
+            envVars: []
+            path: Dockerfile
+            repoUrl: https://github.com/Ani1357/shippingservice.git
+            revision: main
+        type: docker
+    scanSource: false
+    tag: main
+    trigger: false

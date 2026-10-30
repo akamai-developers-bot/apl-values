@@ -1,0 +1,9 @@
+kind: AplTeamCodeRepo
+metadata:
+    name: productcatalogservice
+    labels:
+        apl.io/teamId: prodcatalog
+spec:
+    gitService: github
+    private: false
+    repositoryUrl: https://github.com/Ani1357/productcatalogservice.git

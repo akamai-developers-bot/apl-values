@@ -1,0 +1,17 @@
+kind: AplTeamWorkload
+metadata:
+    name: productcatalogservice
+    labels:
+        apl.io/teamId: prodcatalog
+spec:
+    chartMetadata:
+        helmChartDescription: ""
+        helmChartVersion: ""
+    chartProvider: git
+    createNamespace: false
+    imageUpdateStrategy:
+        type: disabled
+    path: k8s-deployment
+    revision: main
+    sidecarInject: false
+    url: https://github.com/linode/apl-charts.git

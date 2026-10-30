@@ -1,0 +1,19 @@
+kind: AplTeamBuild
+metadata:
+    labels:
+        apl.io/teamId: payment
+    name: paymentservice-main
+spec:
+    externalRepo: true
+    imageName: paymentservice
+    mode:
+        docker:
+            envVars: []
+            path: Dockerfile
+            repoUrl: https://github.com/Ani1357/paymentservice.git
+            revision: main
+        type: docker
+    scanSource: false
+    tag: main
+    trigger: false
+status: {}

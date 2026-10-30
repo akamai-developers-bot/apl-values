@@ -1,0 +1,50 @@
+fullnameOverride: productcatalogservice
+
+image:
+  repository: harbor.d2.dev-akamai-apl.net/team-productcatalog/productcatalogservice
+  pullPolicy: IfNotPresent
+  tag: "main"
+
+replicaCount: 1
+
+containerPorts:
+  - name: grpc
+    containerPort: 3550
+    protocol: TCP
+
+servicePorts:
+  - port: 3550
+    targetPort: grpc
+    protocol: TCP
+    name: grpc
+
+env:
+  - name: PORT
+    value: "3550"
+  - name: COLLECTOR_SERVICE_ADDR
+    value: "opentelemetrycollector.otel:4317"
+  - name: OTEL_SERVICE_NAME
+    value: "productcatalogservice"
+
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 64Mi
+  limits:
+    cpu: 200m
+    memory: 128Mi
+
+podSecurityContext:
+  fsGroup: 1000
+  runAsGroup: 1000
+  runAsNonRoot: true
+  runAsUser: 1000
+
+containerSecurityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  privileged: false
+  readOnlyRootFilesystem: true
