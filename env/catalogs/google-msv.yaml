@@ -1,0 +1,10 @@
+kind: AplCatalog
+metadata:
+    name: google-msv
+spec:
+    branch: main
+    chartsPath: ""
+    enabled: true
+    name: google-msv
+    repositoryUrl: https://github.com/GoogleCloudPlatform/microservices-demo.git
+status: {}
