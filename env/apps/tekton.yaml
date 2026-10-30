@@ -3,7 +3,7 @@ metadata:
     name: tekton
 spec:
     _rawValues: {}
-    enabled: false
+    enabled: true
     resources:
         dashboard:
             limits:

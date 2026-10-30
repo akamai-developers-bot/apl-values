@@ -3,7 +3,7 @@ metadata:
     name: kyverno
 spec:
     _rawValues: {}
-    enabled: false
+    enabled: true
     mode: DevTest
     resources:
         admissionController:

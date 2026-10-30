@@ -2,7 +2,7 @@ kind: AplApp
 metadata:
     name: knative
 spec:
-    enabled: false
+    enabled: true
     resources:
         activator:
             limits:
