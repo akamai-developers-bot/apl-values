@@ -1,8 +1,8 @@
 kind: AplTeamBuild
 metadata:
+    name: adservice-v2
     labels:
         apl.io/teamId: ads
-    name: adservice-v2
 spec:
     externalRepo: true
     imageName: adservice
@@ -16,4 +16,3 @@ spec:
     scanSource: false
     tag: v2
     trigger: false
-status: {}

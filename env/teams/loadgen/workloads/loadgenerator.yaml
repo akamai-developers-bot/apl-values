@@ -1,0 +1,17 @@
+kind: AplTeamWorkload
+metadata:
+    name: loadgenerator
+    labels:
+        apl.io/teamId: loadgen
+spec:
+    chartMetadata:
+        helmChartDescription: ""
+        helmChartVersion: ""
+    chartProvider: git
+    createNamespace: false
+    imageUpdateStrategy:
+        type: disabled
+    path: k8s-deployment
+    revision: main
+    sidecarInject: false
+    url: https://github.com/linode/apl-charts.git

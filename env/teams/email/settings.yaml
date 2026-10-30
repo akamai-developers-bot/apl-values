@@ -1,0 +1,35 @@
+kind: AplTeamSettingSet
+metadata:
+    name: email
+    labels:
+        apl.io/teamId: email
+spec:
+    alerts:
+        groupInterval: 5m
+        receivers:
+            - none
+        repeatInterval: 3h
+    managedMonitoring:
+        alertmanager: false
+        grafana: true
+    networkPolicy:
+        egressPublic: true
+        ingressPrivate: true
+    resourceQuota:
+        - name: services.loadbalancers
+          value: "0"
+        - name: services.nodeports
+          value: "0"
+        - name: requests.cpu
+          value: "24"
+        - name: requests.memory
+          value: 32Gi
+        - name: pods
+          value: "50"
+    selfService:
+        teamMembers:
+            createServices: true
+            downloadDockerLogin: true
+            downloadKubeconfig: true
+            editSecurityPolicies: true
+            useCloudShell: true

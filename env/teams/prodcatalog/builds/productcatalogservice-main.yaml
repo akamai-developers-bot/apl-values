@@ -1,0 +1,18 @@
+kind: AplTeamBuild
+metadata:
+    name: productcatalogservice-main
+    labels:
+        apl.io/teamId: prodcatalog
+spec:
+    externalRepo: true
+    imageName: productcatalogservice
+    mode:
+        docker:
+            envVars: []
+            path: Dockerfile
+            repoUrl: https://github.com/Ani1357/productcatalogservice.git
+            revision: main
+        type: docker
+    scanSource: false
+    tag: main
+    trigger: false

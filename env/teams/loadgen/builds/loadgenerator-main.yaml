@@ -1,0 +1,18 @@
+kind: AplTeamBuild
+metadata:
+    name: loadgenerator-main
+    labels:
+        apl.io/teamId: loadgen
+spec:
+    externalRepo: true
+    imageName: loadgenerator
+    mode:
+        docker:
+            envVars: []
+            path: Dockerfile
+            repoUrl: https://github.com/Ani1357/loadgenerator.git
+            revision: main
+        type: docker
+    scanSource: false
+    tag: main
+    trigger: false

@@ -1,6 +1,6 @@
 kind: AplTeamTool
 metadata:
-    name: productcatalog
+    name: prodcatalog
     labels:
         apl.io/teamId: prodcatalog
 spec:
