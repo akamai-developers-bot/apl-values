@@ -6,7 +6,7 @@ metadata:
   namespace: headlamp
 spec:
   hostnames:
-  - headlamp.lke487006.akamai-apl.net
+  - PLACEHOLDER
   parentRefs:
   - group: gateway.networking.k8s.io
     kind: Gateway
