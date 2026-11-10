@@ -1,0 +1,57 @@
+kind: AplApp
+metadata:
+    name: cert-manager
+spec:
+    _rawValues: {}
+    customRootCA: |
+        -----BEGIN CERTIFICATE-----
+        MIIDRjCCAi6gAwIBAgIBATANBgkqhkiG9w0BAQUFADBXMQswCQYDVQQGEwJOTDEQ
+        MA4GA1UECBMHVXRyZWNodDEQMA4GA1UEBxMHVXRyZWNodDEOMAwGA1UEChMFT3Rv
+        bWkxFDASBgNVBAsTC0RldmVsb3BtZW50MB4XDTI2MTExMDIxMTM1MVoXDTM2MTEx
+        MDIxMTM1MVowVzELMAkGA1UEBhMCTkwxEDAOBgNVBAgTB1V0cmVjaHQxEDAOBgNV
+        BAcTB1V0cmVjaHQxDjAMBgNVBAoTBU90b21pMRQwEgYDVQQLEwtEZXZlbG9wbWVu
+        dDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM5EGnB0yllKrxrkmFzo
+        3w7JHV4R+Z82lNuZEO5bLwHhsClTdIEHdRJl2iNlhmfnvl0xIs1lWWfkwP/NG+UH
+        DhuAPk96D5rqrw/dfF9u3LvmE8rF6BfnHGOtdVI7W+iVPGt4Z5z5TrBhU6j0LOPT
+        P22gye1ax6ZcpRh7GYHy7jd/Qz2BKQVDpqkI7RFNiG3LchqLpaV854VVBLRYMENJ
+        +ILB+ixRIj2BiJGClPCPMjEMI4U0HklvasNALMVhTYk7T9WWBar4MNgB2Do67ELO
+        apcdXTL2meXrc7/9I4zYAGoFtyGoC2i30gyk3g0B4dJlMBwi9GUdlKY1k8T0wV+f
+        M7MCAwEAAaMdMBswDAYDVR0TBAUwAwEB/zALBgNVHQ8EBAMCAvQwDQYJKoZIhvcN
+        AQEFBQADggEBABKpjAgj746UgWz7nWm7Ce8Pe9R8cCtuEQ2iGMBrJ55RWVKTEGZo
+        pj6KhH0Inno/RyGIkYudaTkdhnUgnvmz4wTYmK+LnwHtOq90Xta1ysb/wNsqUgqI
+        OQFcOf7CHSTYDEsDDqIIJcwdDJCs0zO02cCzN2+ABaP7L/cCcQJu8PEuBRCMSkgL
+        tJ20wLnM73GhcCdwmaRxiOx2GuwX4rC8Ak4RBismmkgcsPr3swU31RvlPMZna7zY
+        LHJxYqQ6bhMpWs3PXzMK0aHsq9mDuY3Mh67UM5JhwygAcoOHqMI7Zy1FwQdU0Tnr
+        zU2qfZMHqOkTS1cdUtRl1Jjmm4768Vxm944=
+        -----END CERTIFICATE-----
+    externallyManagedTlsSecretName: apl-lke702713-wildcard-cert
+    issuer: externally-managed-tls-secret
+    resources:
+        cainjector:
+            limits:
+                cpu: 200m
+                memory: 1Gi
+            requests:
+                cpu: 50m
+                memory: 384Mi
+        certManager:
+            limits:
+                cpu: "1"
+                memory: 512Mi
+            requests:
+                cpu: 50m
+                memory: 128Mi
+        startupapicheck:
+            limits:
+                cpu: 200m
+                memory: 384Mi
+            requests:
+                cpu: 50m
+                memory: 64Mi
+        webhook:
+            limits:
+                cpu: 100m
+                memory: 256Mi
+            requests:
+                cpu: 50m
+                memory: 64Mi

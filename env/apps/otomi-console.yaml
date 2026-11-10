@@ -1,0 +1,12 @@
+kind: AplApp
+metadata:
+    name: otomi-console
+spec:
+    _rawValues: {}
+    resources:
+        limits:
+            cpu: 400m
+            memory: 256Mi
+        requests:
+            cpu: 50m
+            memory: 128Mi

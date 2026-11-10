@@ -1,0 +1,101 @@
+kind: AplApp
+metadata:
+    name: kubeflow-pipelines
+spec:
+    _rawValues: {}
+    enabled: false
+    persistence:
+        mysql:
+            size: 20Gi
+    resources:
+        cacheDeployer:
+            limits:
+                cpu: 100m
+                memory: 32Mi
+            requests:
+                cpu: 10m
+                memory: 8Mi
+        cacheServer:
+            limits:
+                cpu: 100m
+                memory: 64Mi
+            requests:
+                cpu: 20m
+                memory: 32Mi
+        metadataEnvoy:
+            limits:
+                cpu: 100m
+                memory: 128Mi
+            requests:
+                cpu: 20m
+                memory: 64Mi
+        metadataGrpc:
+            limits:
+                cpu: 100m
+                memory: 32Mi
+            requests:
+                cpu: 20m
+                memory: 8Mi
+        metadataWriter:
+            limits:
+                cpu: 100m
+                memory: 256Mi
+            requests:
+                cpu: 20m
+                memory: 128Mi
+        mlPipeline:
+            limits:
+                cpu: "1"
+                memory: 1Gi
+            requests:
+                cpu: 200m
+                memory: 256Mi
+        mlPipelinePersistenceagent:
+            limits:
+                cpu: 200m
+                memory: 128Mi
+            requests:
+                cpu: 20m
+                memory: 16Mi
+        mlPipelineScheduledworkflow:
+            limits:
+                cpu: 100m
+                memory: 128Mi
+            requests:
+                cpu: 20m
+                memory: 32Mi
+        mlPipelineUi:
+            limits:
+                cpu: 500m
+                memory: 256Mi
+            requests:
+                cpu: 20m
+                memory: 128Mi
+        mlPipelineViewer:
+            limits:
+                cpu: 200m
+                memory: 128Mi
+            requests:
+                cpu: 20m
+                memory: 32Mi
+        mlPipelineVisualizationserver:
+            limits:
+                cpu: 200m
+                memory: 256Mi
+            requests:
+                cpu: 20m
+                memory: 128Mi
+        mysql:
+            limits:
+                cpu: 500m
+                memory: 1Gi
+            requests:
+                cpu: 100m
+                memory: 512Mi
+        workflowController:
+            limits:
+                cpu: 100m
+                memory: 128Mi
+            requests:
+                cpu: 20m
+                memory: 32Mi

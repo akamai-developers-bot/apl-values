@@ -1,0 +1,7 @@
+kind: AplDns
+metadata:
+    name: dns
+spec:
+    domainFilters: []
+    policy: upsert-only
+    zoneIdFilters: []

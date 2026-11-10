@@ -1,0 +1,5 @@
+kind: AplVersion
+metadata:
+    name: versions
+spec:
+    specVersion: 73
