@@ -1,0 +1,13 @@
+kind: AplApp
+metadata:
+    name: policy-reporter
+spec:
+    _rawValues: {}
+    enabled: false
+    resources:
+        limits:
+            cpu: "1"
+            memory: 512Mi
+        requests:
+            cpu: 100m
+            memory: 128Mi

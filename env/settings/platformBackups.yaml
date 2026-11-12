@@ -1,0 +1,24 @@
+kind: AplBackupCollection
+metadata:
+    name: platformBackups
+spec:
+    database:
+        gitea:
+            enabled: false
+            pathSuffix: gitea
+            retentionPolicy: 7d
+            schedule: 0 0 * * *
+        harbor:
+            enabled: false
+            pathSuffix: harbor
+            retentionPolicy: 7d
+            schedule: 0 0 * * *
+        keycloak:
+            enabled: false
+            pathSuffix: keycloak
+            retentionPolicy: 7d
+            schedule: 0 0 * * *
+    gitea:
+        enabled: false
+        retentionPolicy: 7d
+        schedule: 0 0 * * *

@@ -1,0 +1,26 @@
+kind: AplApp
+metadata:
+    name: gitea
+spec:
+    _rawValues: {}
+    adminUsername: otomi-admin
+    databaseMaxConnections: 28
+    databaseMaxIdleConnections: 6
+    enabled: false
+    networkPolicies:
+        enabled: true
+    resources:
+        gitea:
+            limits:
+                cpu: "1"
+                memory: 1Gi
+            requests:
+                cpu: 100m
+                memory: 256Mi
+        init:
+            limits:
+                cpu: 400m
+                memory: 256Mi
+            requests:
+                cpu: 100m
+                memory: 128Mi

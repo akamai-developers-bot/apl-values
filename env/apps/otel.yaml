@@ -1,0 +1,23 @@
+kind: AplApp
+metadata:
+    name: otel
+spec:
+    _rawValues: {}
+    enabled: false
+    operator:
+        replicaCount: 1
+    resources:
+        logsCollector:
+            limits:
+                cpu: "1"
+                memory: 512Mi
+            requests:
+                cpu: 50m
+                memory: 256Mi
+        manager:
+            limits:
+                cpu: 500m
+                memory: 512Mi
+            requests:
+                cpu: 50m
+                memory: 64Mi

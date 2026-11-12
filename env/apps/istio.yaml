@@ -1,0 +1,44 @@
+kind: AplApp
+metadata:
+    name: istio
+spec:
+    _rawValues: {}
+    ambient: false
+    autoscaling:
+        egressgateway:
+            maxReplicas: 10
+            minReplicas: 2
+        pilot:
+            maxReplicas: 10
+            minReplicas: 2
+    egressGateway:
+        enabled: false
+    resources:
+        egressgateway:
+            limits:
+                cpu: "1"
+                memory: 256Mi
+            requests:
+                cpu: 100m
+                memory: 128Mi
+        operator:
+            limits:
+                cpu: 200m
+                memory: 256Mi
+            requests:
+                cpu: 20m
+                memory: 128Mi
+        pilot:
+            limits:
+                cpu: "2"
+                memory: 2Gi
+            requests:
+                cpu: 100m
+                memory: 192Mi
+        proxy:
+            limits:
+                cpu: "1"
+                memory: 1Gi
+            requests:
+                cpu: 5m
+                memory: 80Mi

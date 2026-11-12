@@ -1,0 +1,53 @@
+kind: AplApp
+metadata:
+    name: prometheus
+spec:
+    _rawValues: {}
+    disabledRules:
+        - InfoInhibitor
+    enabled: true
+    remoteWrite:
+        enabled: false
+        rwConfig:
+            insecureSkipVerify: false
+    replicas: 1
+    resources:
+        kube-state-metrics:
+            limits:
+                cpu: 200m
+                memory: 256Mi
+            requests:
+                cpu: 50m
+                memory: 128Mi
+        node-exporter:
+            limits:
+                cpu: 500m
+                memory: 256Mi
+            requests:
+                cpu: 50m
+                memory: 32Mi
+        prometheus:
+            limits:
+                cpu: "3"
+                memory: 3Gi
+            requests:
+                cpu: 100m
+                memory: 2Gi
+        prometheusConfigReloader:
+            limits:
+                cpu: 100m
+                memory: 128Mi
+            requests:
+                cpu: 10m
+                memory: 24Mi
+        prometheusOperator:
+            limits:
+                cpu: 400m
+                memory: 256Mi
+            requests:
+                cpu: 50m
+                memory: 128Mi
+    retention: 15d
+    retentionSize: 4GB
+    scrapeInterval: 60s
+    storageSize: 5Gi

@@ -1,0 +1,12 @@
+kind: AplApp
+metadata:
+    name: oauth2-proxy
+spec:
+    _rawValues: {}
+    resources:
+        limits:
+            cpu: 200m
+            memory: 128Mi
+        requests:
+            cpu: 20m
+            memory: 32Mi

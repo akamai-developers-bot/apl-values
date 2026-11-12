@@ -1,0 +1,13 @@
+kind: AplCluster
+metadata:
+    name: cluster
+spec:
+    apiServer: https://1dcbb8be-e9f0-4e57-8dd2-1d48d1bab25d.us-lax-2-gw.linodelke.net:443
+    defaultStorageClass: linode-block-storage
+    domainSuffix: lke705499.akamai-apl.net
+    k8sContext: customer-apl-admin
+    linode:
+        tier: standard
+    name: aplinstall705499
+    owner: customer
+    provider: linode

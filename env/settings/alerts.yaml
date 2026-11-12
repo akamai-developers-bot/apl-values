@@ -1,0 +1,6 @@
+kind: AplAlertSet
+metadata:
+    name: alerts
+spec:
+    receivers:
+        - none

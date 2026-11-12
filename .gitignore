@@ -1,0 +1,16 @@
+.history
+.prettierrc.yml
+.vscode
+*.json
+*.yaml.dec
+.decrypted~*
+docker-compose*
+bin/
+core.yaml
+.rerun
+.secrets
+*.sample
+.env
+env/status.yaml
+env/bootstrap.yaml
+values-repo.yaml
