@@ -3,4 +3,14 @@ metadata:
     name: obj
 spec:
     provider:
-        type: disabled
+        linode:
+            accessKeyId: FMDZEZ9KJTSY1D9C956G
+            buckets:
+                cnpg: lke705499-cnpg
+                gitea: lke705499-gitea
+                harbor: lke705499-harbor
+                kubeflow-pipelines: lke705499-kubeflow-pipelines
+                loki: lke705499-loki
+            region: us-lax-4
+        type: linode
+    showWizard: false
