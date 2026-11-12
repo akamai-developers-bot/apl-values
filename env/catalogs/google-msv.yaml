@@ -7,4 +7,3 @@ spec:
     enabled: true
     name: google-msv
     repositoryUrl: https://github.com/GoogleCloudPlatform/microservices-demo.git
-status: {}
